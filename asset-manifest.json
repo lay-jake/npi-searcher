@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/npi-searcher/static/css/main.742e216f.css",
+    "main.js": "/npi-searcher/static/js/main.77b349e7.js",
+    "static/js/787.39d1132a.chunk.js": "/npi-searcher/static/js/787.39d1132a.chunk.js",
+    "index.html": "/npi-searcher/index.html",
+    "main.742e216f.css.map": "/npi-searcher/static/css/main.742e216f.css.map",
+    "main.77b349e7.js.map": "/npi-searcher/static/js/main.77b349e7.js.map",
+    "787.39d1132a.chunk.js.map": "/npi-searcher/static/js/787.39d1132a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.742e216f.css",
+    "static/js/main.77b349e7.js"
+  ]
+}
