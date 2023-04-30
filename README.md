@@ -25,6 +25,7 @@ Powered by the public api hosted at https://npiregistry.cms.hhs.gov/api-page.
 
 ✅ Limited search results to 50 per page
 
+✅ Backend Express/Axios - POST used instead of git for easier Data transfer
 
 
 ## Wishful To Do Items
@@ -32,5 +33,6 @@ Powered by the public api hosted at https://npiregistry.cms.hhs.gov/api-page.
 ❌ More test cases
 
 
+❌ More thorugh backend using gets
 
 

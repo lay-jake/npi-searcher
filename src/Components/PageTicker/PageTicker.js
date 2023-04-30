@@ -9,13 +9,9 @@ function handlePageNumbers(){
     let returnArray = []
     for (let index = 1; index <= length/50; index++) {
         returnArray.push(
-            <>
-           
-            
+                
                 <Button id={"bootstrap-button-overrides-pages"} key={`pageIndex${index}`} className={index === currentPage ? 'active': '' } onClick={() => handlePageSelect(index)}>{index}</Button>
-       
-            
-            </>
+          
         )        
     }
     return(returnArray)

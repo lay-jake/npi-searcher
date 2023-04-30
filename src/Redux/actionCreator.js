@@ -1,5 +1,6 @@
 import * as ActionTypes from './actionTypes'
 import instance from '../Shared/api'
+
 /**
  * 
  * @param {*} update - Object - contains an value for Text input and a searchfield name.
@@ -43,24 +44,39 @@ export const fetchResults = (searchField,dispatch) =>{
     return dispatch => {
         //Alter isloading in state ; usable for generating loading patterns/icons while getting information
         dispatch(resultsLoading());
-    
-    //NPI Version - REQUIRED    
-    let apiVersion =  '/?version=2.1';
-    //we start count at 0 so that the first call gets results 0-200
-    let count = 0;
-    //Has to stay on one line - if indent it adds numerous %20%20 lines to parse respenting the indents/spaces since its a string literal  
-    let apiCall =  `${apiVersion}${searchField.npiNumber.value && `&number=${searchField.npiNumber.value}*`}${searchField.taxonomyDescription.value && `&taxonomy_description=${searchField.taxonomyDescription.value}*`}${searchField.firstName.value && `&first_name=${searchField.firstName.value}*`}${searchField.lastName.value && `&last_name=${searchField.lastName.value}*`}${searchField.city.value && `&city=${searchField.city.value}*`}${searchField.state.value && `&state=${searchField.state.value}`}${searchField.zip.value && `&postal_code=${searchField.zip.value}*`}${`&limit=200`}`    
-    //While we haven't called 6 times (under 1200 results which is max) - and our set is stil returning the max (200)
-    while( count < 6){
-        instance.get(`${apiCall}&skip=${200*count}`)
+       
+        instance.post("results",JSON.stringify(searchField))
         .then( res => {
+            console.log(res.data)
             dispatch(addResults(res.data))
         })
-        .then(count++)
         //TO DO - More indepth error handling.
         .catch( error => console.log(error.message))
         //increment and set results to count
         
     }
     }
-}
+
+    // return dispatch => {
+    //     //Alter isloading in state ; usable for generating loading patterns/icons while getting information
+    //     dispatch(resultsLoading());
+    
+    // //NPI Version - REQUIRED    
+    // let apiVersion =  '/?version=2.1';
+    // //we start count at 0 so that the first call gets results 0-200
+    // let count = 0;
+    // //Has to stay on one line - if indent it adds numerous %20%20 lines to parse respenting the indents/spaces since its a string literal  
+    // let apiCall =  `${apiVersion}${searchField.npiNumber.value && `&number=${searchField.npiNumber.value}*`}${searchField.taxonomyDescription.value && `&taxonomy_description=${searchField.taxonomyDescription.value}*`}${searchField.firstName.value && `&first_name=${searchField.firstName.value}*`}${searchField.lastName.value && `&last_name=${searchField.lastName.value}*`}${searchField.city.value && `&city=${searchField.city.value}*`}${searchField.state.value && `&state=${searchField.state.value}`}${searchField.zip.value && `&postal_code=${searchField.zip.value}*`}${`&limit=200`}`    
+    // //While we haven't called 6 times (under 1200 results which is max) - and our set is stil returning the max (200)
+    // while( count < 6){
+    //     instance.get(`${apiCall}&skip=${200*count}`)
+    //     .then( res => {
+    //         dispatch(addResults(res.data))
+    //     })
+    //     .then(count++)
+    //     //TO DO - More indepth error handling.
+    //     .catch( error => console.log(error.message))
+    //     //increment and set results to count
+        
+    // }
+    // }
