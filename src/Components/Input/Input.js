@@ -31,7 +31,7 @@ const [placeholder, setPlaceholder] = useState(handleDefault());
 
 useEffect(()=>{
   updateSearchField({type:searchType,value:inputText})  
-},[inputText])
+},[inputText,searchType,updateSearchField])
 
 const handleChange = e => {
     setInputText(e.target.value);
