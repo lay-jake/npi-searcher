@@ -20,7 +20,7 @@ app.post("/results", async (req,res) =>{
     let results = 200;
     let count = 0;
     // //Has to stay on one line - if indent it adds numerous %20%20 lines to parse respenting the indents/spaces since its a string literal  
-    let apiCall =  `${apiVersion}${searchField.npiNumber.value && `&number=${searchField.npiNumber.value}*`}${searchField.taxonomyDescription.value && `&taxonomy_description=${searchField.taxonomyDescription.value}*`}${searchField.firstName.value && `&first_name=${searchField.firstName.value}*`}${searchField.lastName.value && `&last_name=${searchField.lastName.value}*`}${searchField.city.value && `&city=${searchField.city.value}*`}${searchField.state.value && `&state=${searchField.state.value}`}${searchField.zip.value && `&postal_code=${searchField.zip.value}*`}${`&limit=200`}`    
+    let apiCall =  `${apiVersion}${searchField.npiNumber.value && `&number=${searchField.npiNumber.value}`}${searchField.taxonomyDescription.value && `&taxonomy_description=${searchField.taxonomyDescription.value}*`}${searchField.firstName.value && `&first_name=${searchField.firstName.value}*`}${searchField.lastName.value && `&last_name=${searchField.lastName.value}*`}${searchField.city.value && `&city=${searchField.city.value}*`}${searchField.state.value && `&state=${searchField.state.value}`}${searchField.zip.value && `&postal_code=${searchField.zip.value}*`}${`&limit=200`}`    
     // //While we haven't called 6 times (under 1200 results which is max) - and our set is stil returning the max (200)
     while( count < 6 && results === 200){
        await axios.get((`${apiCall}&skip=${200*count}`))
