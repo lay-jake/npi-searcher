@@ -1,12 +1,13 @@
 //Setting up axios/express
 const axios = require('axios');
 const express = require('express');
+const cors = require('cors')
 
 const app = express();
 //setting up express to use/parse JSON - altering limit object to allow
 // for the larger data being sent/used when doing multi-searching
 app.use(express.json({limit: '50mb'}));
-
+app.use(cors("http://localhost:3000"))
 
 //We us post request because we are accessing a data object that was given by front end
 app.post("/results", async (req,res) =>{
