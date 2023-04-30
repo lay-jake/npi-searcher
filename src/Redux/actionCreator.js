@@ -47,7 +47,6 @@ export const fetchResults = (searchField,dispatch) =>{
        
         instance.post("results",JSON.stringify(searchField))
         .then( res => {
-            console.log(res.data)
             dispatch(addResults(res.data))
         })
         //TO DO - More indepth error handling.
