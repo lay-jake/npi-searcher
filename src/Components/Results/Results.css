@@ -1,0 +1,43 @@
+.resultsfields{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+  }
+ 
+
+.result-ind{
+    min-width: 380px;
+    border: 2px solid black;
+    padding: 10px;
+    box-shadow: 1px 1px 1.5px black;
+    background-color: #1e2229;
+    animation: rollout 2s ease-in forwards;
+    padding: 10px;
+    margin: 15px;
+}
+
+.result-ind:hover{
+    background-color: #3a3f4b;
+    scale: 1.02;
+}
+
+@keyframes rollout{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: .25;
+    }
+    50%{
+        opacity: .5;
+    }
+    75%{
+        opacity: .75;
+    }
+    100%{
+        opacity: 1;
+    }
+}

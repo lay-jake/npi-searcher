@@ -1,0 +1,30 @@
+#bootstrap-button-overrides-pages{
+        color: white;
+        background-color: #383d46;
+        min-width:  50px;
+        min-height: 50px;
+        border: 2px solid black;
+        box-shadow: 1px 1px 1.5px black;
+        margin-top: 5px;
+        margin-bottom: 25px;
+        margin-left: 25px;
+}
+
+#bootstrap-button-overrides-pages:hover{
+    background-color: #383d46d0;
+    scale: 1.01;
+    border: 3px solid black;
+
+}
+
+#bootstrap-button-overrides-pages.active{
+    background-color: #25272c;
+    min-width:  55px;
+    min-height: 55px;
+}
+/* 
+.page-numbers-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */

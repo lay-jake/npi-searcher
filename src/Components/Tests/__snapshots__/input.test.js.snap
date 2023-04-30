@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Match the snapshot 1`] = `
+<div
+  className="col-sm-auto col-8"
+  data-testid="input-element-1"
+>
+  <form
+    data-testid="input-element-3"
+  >
+    <label
+      data-testid="input-element-2"
+    >
+      This is a display field: 
+      <input
+        onChange={[Function]}
+        placeholder=""
+        type="text"
+        value=""
+      />
+    </label>
+  </form>
+</div>
+`;

@@ -1,0 +1,39 @@
+#bootstrap-button-overrides{
+    color: white;
+    background-color: #383d46;
+    min-width: 380px;
+    min-height: 80px;
+    border: 2px solid black;
+    box-shadow: 1px 1px 1.5px black;
+    margin-top: 5px;
+    margin-bottom: 25px;
+  }
+
+  #bootstrap-button-overrides:hover{
+    scale:1.02;
+    background-color: #383d46;
+    border: 3px solid black;
+  }
+
+
+
+  .popup-content{
+    color: white;
+    border: 2px solid black;
+    background-color:#383d46;
+    padding: 50px;
+    text-align: center;
+    font-size: xx-large;
+    margin: 20px;
+    box-shadow: 1px 1px 1.5px black;
+}
+  .search-warning-button{
+    color: white;
+        border: 1px solid black ;
+        background-color: #282c34;
+        box-shadow: 1px 1px 1.5px black;
+        width: 80%;
+        height: 100%;
+        font-size: xx-large;
+        margin-top: 50px;    
+  }
